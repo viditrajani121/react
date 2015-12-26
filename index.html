@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>React</title>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/react.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.3/JSXTransformer.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+</head>
+<body>
+	<div id="content"></div>
+	<script type="text/jsx">
+	/** @jsx React.DOM **/
+	var EpisodeRow = React.createClass({
+		render: function(){
+			return(
+				<tr>
+					<td>{this.props.episode.title}</td>
+					<td>
+					<a href="#">View</a>
+					</td>
+				</tr>
+			);
+		}
+	});
+	var EpisodeTable = React.createClass({
+		render: function(){
+			var rows = props.episodes.map(function(){
+				return <EpisodeRow key=
+			});
+			return(
+				<div class="container">
+					<div class="col-md-4">
+						<table width="100%">
+							<thead>
+								<tr>
+									<th>Title</th>
+									<th>Link</th>
+								</tr>
+							</thead>
+							<tbody>
+								${rows}
+							</tbody>
+						</table>
+					</div>
+				</div>
+			);
+		}
+	});
+	React.render(<EpisodeRow/>,document.getElementById('content'));
+	</script>
+</body>
+</html>
